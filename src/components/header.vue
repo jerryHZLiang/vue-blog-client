@@ -1,113 +1,82 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+  <header :class="{'login': isLogin, 'no-login':!isLogin}">
+    <template v-if="!isLogin">
+      <h1>Let's share</h1>
+      <p>精品博客汇聚</p>
+      <div class="btns">
+        <el-button>立即登录</el-button>
+        <el-button>注册账号</el-button>
+      </div>
+    </template>
+    <template v-if="isLogin">
+      <h1>Let's share</h1>
+      <i class="edit el-icon-edit"></i>
+      <img src="http://cn.gravatar.com/avatar/1?s=128&d=identicon" alt="" class="avatar">
+    </template>
+  </header>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  export default {
+    data(){
+      return {
+        isLogin: true
+      }
     }
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="less">
+  @import "../assets/base";
+  header.no-login{
+    padding: 0 12% 30px 12%;
+    background: @bgColor;
+    display: grid;
+    justify-items: center;
+
+    h1{
+      color: #fff;
+      font-size: 40px;
+      margin: 60px 0 0 0;
+      text-transform: uppercase;
+    }
+    p{
+      margin: 15px 0 0 0;
+      color: #fff;
+    }
+
+    .btns{
+      margin-top: 20px;
+    }
+    button{
+      margin: 20px 5px 0;
+    }
+  }
+  header.login{
+    display: flex;
+    align-items: center;
+    background: @bgColor;
+
+    h1{
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 40px;
+      text-transform: uppercase;
+      flex: 1;
+    }
+    .edit{
+      color: #fff;
+      font-size: 30px;
+    }
+    .avatar{
+      width: 40px;
+      height: 40px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      margin-left: 15px;
+    }
+  }
+
+
 </style>
