@@ -1,5 +1,5 @@
 export default {
-  name: 'Login',
+  name: 'Detail',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
