@@ -7,7 +7,6 @@ export default {
   },
   methods:{
     onClick1(){
-      this.$message.error('错误信息')
     }
   }
 }
