@@ -8,7 +8,7 @@ const URL={
 export default {
   // 获取所有的blog
   getBlogs({page=1,userId,atIndex}={page:1}){
-    return request(URL.BLOG)
+    return request(URL.BLOG,'GET',{page,userId,atIndex})
   },
   // 获取首页的blog
   getIndexBlogs({page=1}={page:1}){
@@ -28,8 +28,7 @@ export default {
   deleteBlog({blogId}){
     return request(URL.BLOGID.replace(':blogId',blogId),'DELETE')
   },
-  createBlog({title='',content='',description='',atIndex=false}={title:'',content:'',description:''}){
-    console.log('create!')
-    return request(URL.BLOG,'POST',{title,content,description})
+  createBlog({title='',content='',description='',atIndex=false}={title:'',content:'',description:'',atIndex: false}){
+    return request(URL.BLOG,'POST',{title,content,description,atIndex})
   }
 }

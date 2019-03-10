@@ -61,7 +61,6 @@ router.beforeEach((to, from, next) => {
     // this route requires auth, check if logged in
     // if not, redirect to login page.
     store.dispatch('checkLogin').then(result=>{
-      console.log(result)
       if(!result){
         next({
           path: '/login',
