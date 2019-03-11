@@ -1,6 +1,6 @@
 import blog from '@/api/blog'
 export default {
-  name: 'Login',
+  name: 'User',
   data () {
     return {
       blogs: [],
