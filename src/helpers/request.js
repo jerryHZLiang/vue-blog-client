@@ -3,7 +3,7 @@ import {Message} from 'element-ui'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 //全局的 axios 默认值
-axios.defaults.baseURL = 'http://blog-server.hunger-valley.com'
+axios.defaults.baseURL = 'https://blog-server.hunger-valley.com'
 // axios 请求默认是不带 cookies 的，这时需要前端与后端同时做一些调整
 axios.defaults.withCredentials = true;
 
