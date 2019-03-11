@@ -17,6 +17,7 @@ export default {
       this.title = res.data.title
       this.rawContent = res.data.content
       this.createdAt = res.data.createdAt
+      this.user = res.data.user
     })
   },
   computed:{
