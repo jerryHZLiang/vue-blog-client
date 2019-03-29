@@ -18,12 +18,6 @@ const mutations={
   }
 }
 const actions = {
-  // es2015参数结构
-  // actions: {
-  //     increment ({ commit }) {
-  //       commit('increment')
-  //     }
-  //   }
   login({commit},{username, password}) {
     // 调用login的时候会返回一个promise 不return的话登录有页面没有效果
     return auth.login({username, password}).then(res=>{

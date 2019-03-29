@@ -11,10 +11,10 @@ export default {
 
   methods:{
     ...mapActions(['login']),
-    onLogin(){
-      this.login({username:this.username,password:this.password})
+    onLogin() {
+      this.login({username: this.username, password: this.password})
         .then(()=>{
-          this.$router.push({path: this.$route.query.redirect ||'/'})
+          this.$router.push({path: this.$route.query.redirect || '/'})
         })
     }
   }

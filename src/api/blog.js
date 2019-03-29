@@ -3,6 +3,7 @@ import request from '../helpers/request'
 const URL={
   BLOG:'/blog',
   BLOGID:'/blog/:blogId',
+  DELETE: '/blog/:blogId'
 }
 
 export default {
@@ -26,7 +27,7 @@ export default {
     return request(URL.BLOGID.replace(':blogId',blogId),'PATCH',{title,content,description,atIndex})
   },
   deleteBlog({blogId}){
-    return request(URL.BLOGID.replace(':blogId',blogId),'DELETE')
+    return request(URL.DELETE.replace(':blogId',blogId),'DELETE')
   },
   createBlog({title='',content='',description='',atIndex=false}={title:'',content:'',description:'',atIndex: false}){
     return request(URL.BLOG,'POST',{title,content,description,atIndex})
